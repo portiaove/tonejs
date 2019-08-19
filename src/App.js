@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Switch, Route } from 'react-router-dom'
+import Tone from './components/Tone'
+import Drums from './components/Drums'
+import MachineDrum from './components/maquina/808'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        < Route exact path='/808' component={MachineDrum} />
+        < Route exact path='/drums' component={Drums}/>
+        < Route path='/' component={Tone}/>
+      </Switch>
     </div>
   );
 }

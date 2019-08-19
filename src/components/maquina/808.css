@@ -1,0 +1,311 @@
+.Machine-Drum {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  height: 100%;
+  min-height: 100%;
+  margin-top: 12px;
+  background-color: transparent;
+  border-radius: 5px;;
+  /* box-shadow: 3 3 3 3 rgba(99, 138, 10, 0.56); */
+}
+
+
+
+/* DRUMS */
+
+.Instruments {
+  /* background-color:  #f1eded; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid black; */
+  height: 25vh;
+  margin: 4px;
+  font-size: 1vh;
+}
+
+.Instrument {
+  /* border: 1px solid yellow; */
+  background-color:  #e0dfd6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 4px;
+  border-radius: 5px;
+}
+
+.Instrument div {
+  /* border: 1px solid yellow; */
+}
+
+
+
+/* CONTROLLERS */
+
+.Controllers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid black; */
+  height: 29vh;
+}
+
+.Controllers *{
+  /* border: 1px solid black; */
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
+.Bpm-Controllers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+}
+
+.Bpm-Info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* flex: 1; */
+}
+
+.Play-Pause-Machine {
+  width: 55px;
+  height: 55px;
+}
+
+
+/* STEPS */
+
+.Steps {
+  /* border: 1px solid black; */
+  display: flex;
+  height: 35vh;
+}
+
+.Step {
+  flex: 1;
+  border-radius: 10px; 
+  background-color:  #e0dfd6;
+  margin: 0px 1px;
+}
+
+.Step-Active {
+  flex: 1;
+}
+
+.Stp-Btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 0px solid #d9d9d9;
+
+  /* border: 1px solid #1b864f; */
+  border-radius: 10px; 
+}
+
+.Little-Step {
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Active-Step{
+  height: 9px;
+  width: 9px;
+  border-radius: 50%; 
+}
+
+
+
+/* STEP STYLES */
+.Kick {
+  background-color: #aaf5bb;
+}
+.Snare {
+  background-color: #ff9d9d;
+}
+.ClHat {
+  background-color: #efb083;
+}
+.OpHat {
+  background-color: #fcff93;
+}
+.LoTom {
+  background-color: #aebae8;
+}
+.HiTom {
+  background-color: #ffb0fb;
+}
+.Black {
+  background-color: #171615;
+}
+
+/* NAME IT MODAL BOX */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; 
+  /* padding-top: 50px; */
+  left: 0; 
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 25px;
+}
+.modal-content {
+  position: absolute; 
+  border-radius: 25px;
+  background-color: #e0dfd6;
+  padding: 20px; 
+  margin: auto; 
+  /* top: 25%; */
+  width: 65vw;  
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+.close-btn {
+  float: right; 
+  color: lightgray; 
+  font-size: 24px;  
+  font-weight: bold;
+}
+.close-btn:hover {
+  color: darkgray;
+}
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:25%; opacity:1}
+}
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:25%; opacity:1}
+}
+
+
+/* MARKERS */
+
+.Markers {
+  display: flex;
+  justify-content: center;
+}
+
+.Markers div {
+  background-color: #d2ce61;
+  width: 100%;
+  height: 2px;
+  /* margin-bottom: 2vh; */
+  margin: 0vh 2vh 2vh 2vh;
+}
+
+/* RANGE INPUT */
+
+.Input-Form {
+  background: transparent;
+  width: 90%;
+}
+
+input[type=range] {
+  height: 29px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  background: transparent;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 1px #80ADA9;
+  background: #E8E7E1;
+  border-radius: 5px;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 2px #171615;
+  height: 23px;
+  width: 10px;
+  border-radius: 6px;
+  background: #171615;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -9.5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #74A9D8;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 1px #80ADA9;
+  background: #74A9D8;
+  border-radius: 5px;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 2px #80ADA9;
+  height: 23px;
+  width: 10px;
+  border-radius: 6px;
+  background: #E8E7E1;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #74A9D8;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1px #80ADA9;
+}
+input[type=range]::-ms-fill-upper {
+  background: #74A9D8;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1px #80ADA9;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 2px #80ADA9;
+  height: 23px;
+  width: 10px;
+  border-radius: 6px;
+  background: #E8E7E1;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #74A9D8;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #74A9D8;
+}
