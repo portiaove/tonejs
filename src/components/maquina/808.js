@@ -11,6 +11,7 @@ import saveIcon2 from '../../images/FloppyDisk2.svg'
 import saveIcon3 from '../../images/FloppyDisk3.svg'
 import goBack from '../../images/GoBack.svg'
 import Tone from 'tone'
+import { Howl } from 'howler'
 
 
 
@@ -21,7 +22,8 @@ let start = null
 
 class MachineDrum extends React.Component {
   state = {
-    sounds: {},
+    // sounds: {},
+    sounds: null,
     drums: {
       kick: [...EMPTY_BEAT],
       snare: [...EMPTY_BEAT],
@@ -77,12 +79,12 @@ class MachineDrum extends React.Component {
   count = () => {
     const { counter, drums, sounds } = this.state
     
-    drums.kick[counter] && sounds.kick.start()
-    drums.snare[counter] && sounds.snare.start()
-    drums.clHat[counter] && sounds.clHat.start()
-    drums.opHat[counter] && sounds.opHat.start()
-    drums.loTom[counter] && sounds.loTom.start()
-    drums.hiTom[counter] && sounds.hiTom.start()
+    drums.kick[counter] && sounds.play('kick')
+    drums.snare[counter] && sounds.play('snare')
+    drums.clHat[counter] && sounds.play('clHat')
+    drums.opHat[counter] && sounds.play('opHat')
+    drums.loTom[counter] && sounds.play('loTom')
+    drums.hiTom[counter] && sounds.play('hiTom')
 
     this.setState({
       counter: counter > 14 ? 0 : counter + 1
@@ -143,13 +145,28 @@ class MachineDrum extends React.Component {
   }
 
   componentDidMount() {
-    let kick = new Tone.Player('/kick.mp3').toMaster()
-    let clHat = new Tone.Player('/clHat.mp3').toMaster()
-    let hiTom = new Tone.Player('/hiTom.mp3').toMaster()
-    let loTom = new Tone.Player('/loTom.mp3').toMaster()
-    let opHat = new Tone.Player('/opHat.mp3').toMaster()
-    let snare = new Tone.Player('/snare.mp3').toMaster()
-    this.setState({ sounds: {kick, clHat, hiTom, loTom, opHat, snare} })
+    // let kick = new Tone.Player('/kick.mp3').toMaster()
+    // let clHat = new Tone.Player('/clHat.mp3').toMaster()
+    // let hiTom = new Tone.Player('/hiTom.mp3').toMaster()
+    // let loTom = new Tone.Player('/loTom.mp3').toMaster()
+    // let opHat = new Tone.Player('/opHat.mp3').toMaster()
+    // let snare = new Tone.Player('/snare.mp3').toMaster()
+    // this.setState({ sounds: {kick, clHat, hiTom, loTom, opHat, snare} })
+
+    const sounds = new Howl({
+      src: ['808Sprite.mp3'],
+      sprite: {
+        kick: [0, 1130],
+        snare: [1170, 402],
+        loTom: [1570, 580],
+        hiTom: [2156, 420],
+        clHat: [2600, 188],
+        opHat: [2781, 350]
+      }
+    })
+
+    this.setState({ sounds })
+
   }
 
   render() {
